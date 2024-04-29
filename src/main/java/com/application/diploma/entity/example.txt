@@ -1,0 +1,30 @@
+##################### Staus @@@@@@@@@@@@@@@@@@@@@@
+
+session.beginTransaction();
+
+Status status = Status.builder()
+               .status("Old")
+               .date_of_change(new Timestamp(System.currentTimeMillis()))
+               .build();
+session.save(status);
+session.getTransaction().commit();
+
+#################### Users @@@@@@@@@@@@@@@@@@@@@@@@@
+
+session.beginTransaction();
+            Users user = Users.builder()
+                    .login("login")
+                    .password("password")
+                    .position("position")
+                    .access_rights("access_rights")
+                    .first_name("first_name")
+                    .last_name("last_name")
+                    .surname("surname")
+                    .work_phone("447556")
+                    .mobile_phone("89992284656")
+                    .e_mail("e-mail")
+                    .department("department")
+                    .build();
+
+            session.save(user);
+            session.getTransaction().commit();
