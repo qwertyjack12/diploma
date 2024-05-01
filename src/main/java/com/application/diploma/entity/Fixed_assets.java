@@ -43,7 +43,7 @@ public class Fixed_assets implements Serializable {
     @Column(nullable = false, length = 128)
     private String photo;
 
-    @Column(nullable = false)
-    private Integer fk_category;
+    @Column(nullable = false, length = 32)
+    private String fk_category;
 
 }

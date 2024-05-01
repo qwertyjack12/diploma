@@ -24,4 +24,7 @@ public class Fixed_assets_status {
 
     @Column(nullable = false)
     private Integer fk_status_id;
+
+    @Column(nullable = false, length = 128)
+    private String status_note;
 }

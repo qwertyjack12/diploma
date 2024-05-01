@@ -23,19 +23,10 @@ public class HibernateRunner {
             Session session = sessionFactory.openSession()){
 
             session.beginTransaction();
-            Fixed_assets fixed_assets = Fixed_assets.builder()
-                    .pk_inventory_number("111")
-                    .factory_number("facnum")
-                    .auditory("a.3430")
-                    .name("name")
-                    .model("model")
-                    .cost(77777)
-                    .annotation("adawdawdawdf")
-                    .photo("path/to/photo")
-                    .fk_category(2)
+            Categories categories = Categories.builder()
+                    .pk_category("Old")
                     .build();
-
-            session.save(fixed_assets);
+            session.save(categories);
             session.getTransaction().commit();
 //            Status status = Status.builder()
 //                    .status("What")
