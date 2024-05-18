@@ -6,21 +6,27 @@
     <session-factory>
 
         <!-- Set URL -->
-        <property name = "hibernate.connection.url">jdbc:postgresql://localhost:5432/db_control_and_accounting</property>
+        <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/db_control_and_accounting</property>
 
         <!-- Set User Name -->
-        <property name = "hibernate.connection.username">postgres</property>
+        <property name="hibernate.connection.username">postgres</property>
 
         <!-- Set Password -->
-        <property name = "hibernate.connection.password">1111</property>
+        <property name="hibernate.connection.password">1111</property>
 
         <!-- Set Driver Name -->
-        <property name = "hibernate.connection.driver_class">org.postgresql.Driver</property>
+        <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
 
-        <property name = "hibernate.show_sql">true</property>
-        <property name = "hibernate.format_sql">true</property>
-<!--        <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQL10Dialect</property>-->
+        <property name="hibernate.show_sql">true</property>
+        <property name="hibernate.format_sql">true</property>
+        <property name="hibernate.highlight_sql">true</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
 
-<!--        <mapping class="com.application.diploma.entity.Users"/>-->
+        <mapping class="com.application.diploma.entity.Users"/>
+        <mapping class="com.application.diploma.entity.Status"/>
+        <mapping class="com.application.diploma.entity.Categories"/>
+        <mapping class="com.application.diploma.entity.Fixed_assets"/>
+        <mapping class="com.application.diploma.entity.Material_resources"/>
+        <mapping class="com.application.diploma.entity.Fixed_assets_status"/>
     </session-factory>
 </hibernate-configuration>

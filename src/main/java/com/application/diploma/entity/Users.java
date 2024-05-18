@@ -3,16 +3,14 @@ package com.application.diploma.entity;
 //Сущность "Пользователи"
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
+import lombok.*;
 
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Getter
+@Setter
 @Builder
 @Entity
 @Table(name = "users", schema = "public")
@@ -23,7 +21,7 @@ public class Users {
     @Column(nullable = false)
     private Integer pk_user_id;
 
-    @Column(nullable = false, length = 64)
+    @Column(nullable = false, length = 64, unique = true)
     private String login;
 
     @Column(nullable = false, length = 256)
@@ -50,7 +48,7 @@ public class Users {
     @Column(nullable = false, length = 11)
     private String mobile_phone;
 
-    @Column(nullable = false, length = 254)
+    @Column(nullable = false, length = 254, unique = true)
     private String e_mail;
 
     @Column(nullable = false, length = 64)

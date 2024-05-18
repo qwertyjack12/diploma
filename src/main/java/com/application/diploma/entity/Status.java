@@ -3,16 +3,14 @@ package com.application.diploma.entity;
 //Сущность "Статус"
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.io.Serializable;
-import java.sql.Timestamp;
 
 @NoArgsConstructor
 @AllArgsConstructor
+@Getter
+@Setter
 @Builder
 @Entity
 @Table(name = "status", schema = "public")
@@ -25,8 +23,5 @@ public class Status implements Serializable {
 
     @Column(nullable = false, length = 32)
     private String status;
-
-    @Column(columnDefinition = "TIMESTAMP WITHOUT TIME ZONE", nullable = false)
-    private Timestamp date_of_change;
 
 }

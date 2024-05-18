@@ -1,22 +1,21 @@
 package com.application.diploma.entity;
 
+import java.io.Serializable;
+
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.io.Serializable;
-
-//Сущность "Категории"
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter
 @Builder
 @Entity
-@Table(name = "categories", schema = "public")
-public class Categories implements Serializable {
+@Table(name = "edinica_izmer", schema = "public")
+public class Edinica_izmer implements Serializable {
 
     @Id
     @Column(nullable = false, length = 32)
-    private String pk_category;
+    private String pk_ed_izmer;
 
 }

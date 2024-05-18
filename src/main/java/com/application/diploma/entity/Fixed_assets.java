@@ -3,16 +3,15 @@ package com.application.diploma.entity;
 //Сущность "Основные средства"
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.NoArgsConstructor;
-import org.springframework.context.annotation.Primary;
+import lombok.*;
 
 import java.io.Serializable;
-
+import java.sql.Timestamp;
 
 @NoArgsConstructor
 @AllArgsConstructor
+@Getter
+@Setter
 @Builder
 @Entity
 @Table(name = "fixed_assets", schema = "public")
@@ -45,5 +44,8 @@ public class Fixed_assets implements Serializable {
 
     @Column(nullable = false, length = 32)
     private String fk_category;
+
+    @Column(columnDefinition = "TIMESTAMP WITHOUT TIME ZONE")
+    private Timestamp commissioning_date;
 
 }

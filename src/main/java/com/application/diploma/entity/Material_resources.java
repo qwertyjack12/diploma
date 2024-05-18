@@ -3,12 +3,12 @@ package com.application.diploma.entity;
 //Сущность "Материальные запасы"
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @NoArgsConstructor
 @AllArgsConstructor
+@Getter
+@Setter
 @Builder
 @Entity
 @Table(name = "material_resources", schema = "public")
