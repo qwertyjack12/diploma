@@ -17,7 +17,7 @@ public class MaterialResourcesService {
     }
 
     public List<Material_resources> getALlMaterial_resources() {
-        return materialResourcesRepository.findAll();
+        return materialResourcesRepository.findAllMaterRes();
     }
 
     public Boolean add(Material_resources material_resources) {
