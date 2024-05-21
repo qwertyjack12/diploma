@@ -21,7 +21,7 @@ public class Status implements Serializable {
     @Column(nullable = false)
     private Integer pk_status_id;
 
-    @Column(nullable = false, length = 32)
+    @Column(nullable = false, length = 32, unique = true)
     private String status;
 
 }

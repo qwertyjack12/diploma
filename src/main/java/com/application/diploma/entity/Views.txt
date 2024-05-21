@@ -1,0 +1,25 @@
+-- View: public.material_resources_model
+
+-- DROP VIEW public.material_resources_model;
+
+CREATE OR REPLACE VIEW public.material_resources_model
+ AS
+ SELECT mr.pk_material_resources_id,
+    mr.fk_fixed_assets_id,
+    mr.quantity,
+    fa.pk_inventory_number,
+    fa.factory_number,
+    fa.auditory,
+    fa.name,
+    fa.model,
+    fa.cost,
+    fa.annotation,
+    fa.photo,
+    fa.fk_category,
+    fa.commissioning_date
+   FROM material_resources mr
+     LEFT JOIN fixed_assets fa ON fa.pk_inventory_number::text = mr.fk_fixed_assets_id::text;
+
+ALTER TABLE public.material_resources_model
+    OWNER TO postgres;
+
