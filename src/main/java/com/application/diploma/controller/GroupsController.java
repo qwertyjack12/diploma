@@ -2,6 +2,9 @@ package com.application.diploma.controller;
 
 import java.util.List;
 
+import javax.swing.GroupLayout.Group;
+
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -28,5 +31,11 @@ public class GroupsController {
     public Boolean add(@RequestBody Groups group) {
         System.out.println("model is " + (group == null ? "nope " : group.getPk_group()));
         return groupsService.add(group);
+    }
+
+    @DeleteMapping("/groups/delete")
+    public Boolean delete(@RequestBody Groups group) {
+        System.out.println("Deleting is group: " + group.getPk_group());
+        return groupsService.delete(group);
     }
 }

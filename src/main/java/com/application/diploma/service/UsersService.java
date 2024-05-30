@@ -33,4 +33,34 @@ public class UsersService {
             return false;
         }
     }
+
+    public Boolean edit(Users user) {
+        try {
+            userRepository.save(user);
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    public Boolean delete(Users user) {
+        try {
+            userRepository.delete(user);
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    public Boolean deleteById(Integer id) {
+        try {
+            userRepository.deleteById(id);
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
 }

@@ -16,10 +16,34 @@ CREATE OR REPLACE VIEW public.material_resources_model
     fa.annotation,
     fa.photo,
     fa.fk_category,
-    fa.commissioning_date
+    fa.commissioning_date,
+    fa.fk_group,
+    fa.fk_ed_izmer
    FROM material_resources mr
      LEFT JOIN fixed_assets fa ON fa.pk_inventory_number::text = mr.fk_fixed_assets_id::text;
 
 ALTER TABLE public.material_resources_model
     OWNER TO postgres;
 
+
+-----------------------------------------------------
+
+create or replace view fixed_assets_status_model as
+
+select fas.pk_fixed_assets_status_id, fas.fk_inventory_number, fas.fk_status_id, s.status, fas.status_note, fas.date_of_change
+from fixed_assets_status fas
+left join status s on fas.fk_status_id = s.pk_status_id
+
+CREATE OR REPLACE VIEW public.fixed_assets_status_model
+ AS
+ SELECT fas.pk_fixed_assets_status_id,
+    fas.fk_inventory_number,
+    fas.fk_status_id,
+    s.status,
+    fas.status_note,
+    fas.date_of_change
+   FROM fixed_assets_status fas
+     LEFT JOIN status s ON fas.fk_status_id = s.pk_status_id;
+
+ALTER TABLE public.fixed_assets_status_model
+    OWNER TO postgres;

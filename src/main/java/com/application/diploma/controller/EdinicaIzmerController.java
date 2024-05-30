@@ -2,6 +2,7 @@ package com.application.diploma.controller;
 
 import java.util.List;
 
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -28,6 +29,12 @@ public class EdinicaIzmerController {
     public Boolean add(@RequestBody Edinica_izmer edinica_izmer) {
         System.out.println("model is " + (edinica_izmer == null ? "nope " : edinica_izmer.getPk_ed_izmer()));
         return edinicaIzmerService.add(edinica_izmer);
+    }
+
+    @DeleteMapping("/edizmer/delete")
+    public Boolean delete(@RequestBody Edinica_izmer edinica_izmer) {
+        System.out.println("Deleting edizmer: " + edinica_izmer.getPk_ed_izmer());
+        return edinicaIzmerService.delete(edinica_izmer);
     }
 
 }

@@ -30,4 +30,14 @@ public class EdinicaIzmerService {
         }
     }
 
+    public Boolean delete(Edinica_izmer edinica_izmer) {
+        try {
+            edinicaIzmerRepository.delete(edinica_izmer);
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
 }

@@ -31,8 +31,9 @@ public class StatusController {
         return statusService.add(status);
     }
 
-    @DeleteMapping("status/del")
-    public Boolean del(@RequestBody Status status) {
-        return statusService.del(status);
+    @DeleteMapping("status/delete")
+    public Boolean delete(@RequestBody Status status) {
+        System.out.println("Deleting status: " + status.getStatus());
+        return statusService.delete(status);
     }
 }

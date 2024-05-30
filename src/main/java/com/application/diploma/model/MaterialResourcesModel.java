@@ -34,9 +34,11 @@ public class MaterialResourcesModel {
     String auditory;
     String name;
     String model;
-    Integer cost;
+    Double cost;
     String annotation;
     String photo;
     String fk_category;
     Timestamp commissioning_date;
+    String fk_group;
+    String fk_ed_izmer;
 }

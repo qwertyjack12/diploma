@@ -27,14 +27,14 @@ public class Fixed_assets implements Serializable {
     @Column(nullable = false, length = 8)
     private String auditory;
 
-    @Column(nullable = false, length = 32)
+    @Column(nullable = false)
     private String name;
 
     @Column(nullable = false, length = 32)
     private String model;
 
-    @Column(nullable = false)
-    private Integer cost;
+    @Column(nullable = true)
+    private Double cost;
 
     @Column(nullable = false)
     private String annotation;
@@ -48,4 +48,9 @@ public class Fixed_assets implements Serializable {
     @Column(columnDefinition = "TIMESTAMP WITHOUT TIME ZONE")
     private Timestamp commissioning_date;
 
+    @Column(nullable = false, length = 32)
+    private String fk_group;
+
+    @Column(nullable = false, length = 32)
+    private String fk_ed_izmer;
 }

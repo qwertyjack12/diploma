@@ -2,6 +2,7 @@ package com.application.diploma.controller;
 
 import java.util.List;
 
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -28,5 +29,11 @@ public class CategoriesController {
     public Boolean add(@RequestBody Categories categories) {
         System.out.println("model is " + (categories == null ? "nope " : categories.getPk_category()));
         return categoriesService.add(categories);
+    }
+
+    @DeleteMapping("/categories/delete")
+    public Boolean delete(@RequestBody Categories categories) {
+        System.out.println("Deleting categore: " + categories.getPk_category());
+        return categoriesService.delete(categories);
     }
 }

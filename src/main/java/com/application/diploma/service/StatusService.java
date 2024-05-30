@@ -30,10 +30,19 @@ public class StatusService {
         }
     }
 
-    public Boolean del(Status status) {
+    public Boolean delete(Status status) {
         try {
             statusRepository.delete(status);
-            ;
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    public Boolean deleteById(Integer id) {
+        try {
+            statusRepository.deleteById(id);
             return true;
         } catch (Exception e) {
             e.printStackTrace();

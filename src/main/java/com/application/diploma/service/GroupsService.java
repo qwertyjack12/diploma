@@ -29,4 +29,14 @@ public class GroupsService {
         }
     }
 
+    public Boolean delete(Groups group) {
+        try {
+            groupsRepository.delete(group);
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
 }

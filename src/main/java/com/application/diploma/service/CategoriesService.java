@@ -30,4 +30,14 @@ public class CategoriesService {
         }
     }
 
+    public Boolean delete(Categories categories) {
+        try {
+            categoriesRepository.delete(categories);
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
 }
