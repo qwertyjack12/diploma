@@ -19,6 +19,6 @@ public interface FixedAssetsRepository
     @Query("SELECT fa FROM Fixed_assets fa WHERE  fa.pk_inventory_number = :invNum")
     Optional<Fixed_assets> findByInvNum(@Param("invNum") String invNum);
 
-    @Query("SELECT fa FROM Fixed_assets fa WHERE fa.pk_inventory_number NOT IN (SELECT mr.fk_fixed_assets_id FROM Material_resources mr)")
+    @Query("SELECT fa FROM Fixed_assets fa WHERE fa.fk_category='Основные средства'")
     List<Fixed_assets> findAll(Specification<Fixed_assets> specification);
 }

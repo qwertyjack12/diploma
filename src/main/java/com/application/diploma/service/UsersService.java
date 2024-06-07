@@ -26,6 +26,11 @@ public class UsersService {
 
     public Boolean add(Users user) {
         try {
+            /*
+             * String password = user.getPassword();
+             * password = encodedPassowed(password);
+             * user.setPassword(password)
+             */;
             userRepository.save(user);
             return true;
         } catch (Exception e) {
@@ -63,4 +68,12 @@ public class UsersService {
             return false;
         }
     }
+
+    /*
+     * private String encodedPassowed(String password) {
+     * PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+     * String encodedPassword = passwordEncoder.encode(password);
+     * return encodedPassword;
+     * }
+     */
 }

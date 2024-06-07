@@ -32,4 +32,14 @@ public class StatusHistoryService {
     public List<StatusHistoryModel> getAllStatusHistory() {
         return statusHistoryViewRepository.findAll();
     }
+
+    public Boolean add(Fixed_assets_status fixed_assets_status) {
+        try {
+            statusHistoryRepository.save(fixed_assets_status);
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
 }

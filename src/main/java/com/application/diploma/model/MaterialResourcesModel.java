@@ -31,7 +31,7 @@ public class MaterialResourcesModel {
     Integer quantity;
     String pk_inventory_number;
     String factory_number;
-    String auditory;
+    String fk_auditory;
     String name;
     String model;
     Double cost;

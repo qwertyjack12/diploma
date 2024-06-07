@@ -9,7 +9,7 @@ CREATE OR REPLACE VIEW public.material_resources_model
     mr.quantity,
     fa.pk_inventory_number,
     fa.factory_number,
-    fa.auditory,
+    fa.fk_auditory,
     fa.name,
     fa.model,
     fa.cost,

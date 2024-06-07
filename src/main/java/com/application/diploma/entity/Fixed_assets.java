@@ -24,8 +24,8 @@ public class Fixed_assets implements Serializable {
     @Column(nullable = false, length = 32)
     private String factory_number;
 
-    @Column(nullable = false, length = 8)
-    private String auditory;
+    @Column(length = 8)
+    private String fk_auditory;
 
     @Column(nullable = false)
     private String name;

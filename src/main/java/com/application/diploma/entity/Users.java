@@ -5,7 +5,6 @@ package com.application.diploma.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
-
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -21,37 +20,37 @@ public class Users {
     @Column(nullable = false)
     private Integer pk_user_id;
 
-    @Column(nullable = false, length = 64, unique = true)
+    @Column(length = 64, unique = true)
     private String login;
 
-    @Column(nullable = false, length = 256)
+    @Column(length = 256)
     private String password;
 
-    @Column(nullable = false, length = 32)
+    @Column(length = 32)
     private String position;
 
-    @Column(nullable = false, length = 32)
+    @Column(length = 32)
     private String access_rights;
 
-    @Column(nullable = false, length = 128)
+    @Column(length = 128)
     private String first_name;
 
-    @Column(nullable = false, length = 128)
+    @Column(length = 128)
     private String last_name;
 
-    @Column(nullable = false, length = 128)
+    @Column(length = 128)
     private String surname;
 
-    @Column(nullable = false, length = 6)
+    @Column(length = 6)
     private String work_phone;
 
-    @Column(nullable = false, length = 11)
+    @Column(length = 11)
     private String mobile_phone;
 
-    @Column(nullable = false, length = 254, unique = true)
+    @Column(length = 254, unique = true)
     private String e_mail;
 
-    @Column(nullable = false, length = 64)
-    private String department;
+    @Column(length = 128)
+    private String fk_department;
 
 }

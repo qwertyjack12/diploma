@@ -43,9 +43,9 @@ public class MaterialResourcesService {
     public Boolean add(MaterialResourcesModel materialResourcesModel) {
         try {
             Fixed_assets fixedAssets = new Fixed_assets();
-            fixedAssets.setPk_inventory_number(materialResourcesModel.getPk_inventory_number());
+            fixedAssets.setPk_inventory_number(materialResourcesModel.getFk_fixed_assets_id());
             fixedAssets.setFactory_number(materialResourcesModel.getFactory_number());
-            fixedAssets.setAuditory(materialResourcesModel.getAuditory());
+            fixedAssets.setFk_auditory(materialResourcesModel.getFk_auditory());
             fixedAssets.setName(materialResourcesModel.getName());
             fixedAssets.setModel(materialResourcesModel.getModel());
             fixedAssets.setCost(materialResourcesModel.getCost());
@@ -73,9 +73,9 @@ public class MaterialResourcesService {
     public Boolean edit(MaterialResourcesModel materialResourcesModel) {
         try {
             Fixed_assets fixedAssets = new Fixed_assets();
-            fixedAssets.setPk_inventory_number(materialResourcesModel.getPk_inventory_number());
+            fixedAssets.setPk_inventory_number(materialResourcesModel.getFk_fixed_assets_id());
             fixedAssets.setFactory_number(materialResourcesModel.getFactory_number());
-            fixedAssets.setAuditory(materialResourcesModel.getAuditory());
+            fixedAssets.setFk_auditory(materialResourcesModel.getFk_auditory());
             fixedAssets.setName(materialResourcesModel.getName());
             fixedAssets.setModel(materialResourcesModel.getModel());
             fixedAssets.setCost(materialResourcesModel.getCost());
@@ -103,6 +103,10 @@ public class MaterialResourcesService {
 
     public Boolean delete(MaterialResourcesModel materialResourcesModel) {
         try {
+            Fixed_assets fixedAssets = new Fixed_assets();
+            fixedAssets.setPk_inventory_number(materialResourcesModel.getPk_inventory_number());
+
+            fixedAssetsRepository.delete(fixedAssets);
             return true;
         } catch (Exception e) {
             e.printStackTrace();

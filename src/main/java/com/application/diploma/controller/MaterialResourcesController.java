@@ -3,6 +3,7 @@ package com.application.diploma.controller;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -42,6 +43,12 @@ public class MaterialResourcesController {
     public Boolean edit(@RequestBody MaterialResourcesModel materialResourcesModel) {
         System.out.println("Edit material resource: " + materialResourcesModel.getPk_inventory_number());
         return materialResourcesService.edit(materialResourcesModel);
+    }
+
+    @DeleteMapping("/material_res_card/delete")
+    public Boolean delete(@RequestBody MaterialResourcesModel materialResourcesModel) {
+        System.out.println("Delete material resource: " + materialResourcesModel.getName());
+        return materialResourcesService.delete(materialResourcesModel);
     }
 
 }
