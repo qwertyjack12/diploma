@@ -11,4 +11,7 @@ import com.application.diploma.entity.Users;
 public interface UsersRepository extends JpaRepository<Users, Integer> {
 
     Optional<Users> findById(Integer id);
+
+    Optional<Users> findByLogin(String login);
+
 }

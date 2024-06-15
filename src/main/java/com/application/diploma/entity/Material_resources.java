@@ -24,5 +24,4 @@ public class Material_resources {
 
     @Column(nullable = false)
     private Integer quantity;
-
 }

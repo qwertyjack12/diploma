@@ -23,7 +23,6 @@ import lombok.Setter;
 @Getter
 @Setter
 @Builder
-
 public class MaterialResourcesModel {
     @Id
     Integer pk_material_resources_id;

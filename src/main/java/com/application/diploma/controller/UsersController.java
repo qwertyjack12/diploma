@@ -32,6 +32,11 @@ public class UsersController {
         return userService.getUser(id);
     }
 
+    @GetMapping("/user_card/check/{login}")
+    public Optional<Users> exist(@PathVariable("login") String login) {
+        return userService.findByLogin(login);
+    }
+
     @PostMapping("/user_card/add")
     public Boolean add(@RequestBody Users user) {
         System.out.println("model is " + (user == null ? "nope " : user.getFirst_name()));

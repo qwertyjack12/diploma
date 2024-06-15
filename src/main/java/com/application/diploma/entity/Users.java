@@ -1,5 +1,7 @@
 package com.application.diploma.entity;
 
+import java.util.Collection;
+
 //Сущность "Пользователи"
 
 import jakarta.persistence.*;
@@ -52,5 +54,12 @@ public class Users {
 
     @Column(length = 128)
     private String fk_department;
+
+    @Column
+    private String photo;
+
+    @ManyToMany
+    @JoinTable(name = "users_roles", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
+    private Collection<Role> roles;
 
 }
