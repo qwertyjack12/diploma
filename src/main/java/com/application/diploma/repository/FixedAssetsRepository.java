@@ -3,7 +3,6 @@ package com.application.diploma.repository;
 import java.util.List;
 import java.util.Optional;
 
-import org.springframework.data.jpa.domain.Specification;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.data.jpa.repository.Query;
@@ -20,5 +19,5 @@ public interface FixedAssetsRepository
     Optional<Fixed_assets> findByInvNum(@Param("invNum") String invNum);
 
     @Query("SELECT fa FROM Fixed_assets fa WHERE fa.fk_category='Основные средства'")
-    List<Fixed_assets> findAll(Specification<Fixed_assets> specification);
+    List<Fixed_assets> findAll();
 }
